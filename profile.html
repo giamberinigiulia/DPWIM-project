@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0; /* Remove default margin */
+        }
+
+        .header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ddd;
+        }
+
+        .container-content {
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .profile-info {
+            max-width: 400px;
+            margin: 0 auto; /* Center the container */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px; /* Add margin for better spacing */
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .user-field {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .user-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        #dob {
+            width: 400px; /* Set your desired fixed width */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Truncate text if it exceeds the width */
+        }
+    </style>
+</head>
+<body>
+    <!-- Bootstrap Navigation Panel -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">{{.Username}}'s Profile</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <form action="#" method="get">
+                            <button type="submit" class="nav-link btn btn-link">Profile</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/bookings" method="get">
+                            <button type="submit" class="nav-link btn btn-link">Bookings</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/booklesson" method="get">
+                            <button type="submit" class="nav-link btn btn-link">Book a new Lesson</button>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="get">
+                           <button type="submit" class="nav-link btn btn-link">LOGOUT</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-content">
+
+        <!-- Profile Information -->
+        <div class="profile-info">
+            <h1>User profile</h1>
+            <div class="user-field">
+                <label for="username">Username:</label>
+                <div id="username">{{.Username}}</div>
+            </div>
+
+            <div class="user-field">
+                <label for="name">Name:</label>
+                <div id="name">{{.Name}}</div>
+            </div>
+
+            <div class="user-field">
+                <label for="surname">Surname:</label>
+                <div id="surname">{{.Surname}}</div>
+            </div>
+
+            <div class="user-field">
+                <label for="dob">Date of Birth:</label>
+                <div id="dob">{{.DateOfBirth | datetoFormat "02/01/2006"}}</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 DPWIM Project
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

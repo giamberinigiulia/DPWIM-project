@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <style>
+        /* Custom styling for the registration form */
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 20px;
+        }
+
+        .register-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/userregistration" method="POST">
+            <h1 class="text-center">{{.Title}}</h1>
+            <p class="text-center">Please fill in this form to create an account.</p>
+            <p class="text-center" style="color: red"><b>{{.Body}}</b></p>
+            <hr>
+            
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter Surname" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="dateofbirth">Date of Birth</label>
+                <input type="date" class="form-control" id="dateofbirth" name="dateofbirth" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="psw">Password</label>
+                <input type="password" class="form-control" id="psw" name="psw" placeholder="Enter Password" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="psw-repeat">Repeat Password</label>
+                <input type="password" class="form-control" id="psw-repeat" name="psw-repeat" placeholder="Repeat Password" required>
+            </div>
+    
+            <button type="submit" class="btn btn-primary btn-block register-btn">Register</button>
+        </form>
+        <div class="text-center">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional, if needed) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

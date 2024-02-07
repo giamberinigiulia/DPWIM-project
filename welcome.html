@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Centering the container */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Additional styles for the centered box */
+        .centered-box {
+            text-align: center;
+        }
+
+        /* Styling for rounded border buttons */
+        .btn-rounded {
+            background-color: transparent;
+            color: #6c757d; /* Neutral text color */
+            border: 2px solid #6c757d; /* Neutral border color */
+            border-radius: 20px; /* Rounded corners */
+            padding: 10px 20px;
+            margin: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Change button appearance on hover */
+        .btn-rounded:hover {
+            background-color: #6c757d; /* Full button color on hover */
+            color: #fff; /* White text color on hover */
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="centered-box">
+        <h1>WELCOME TO THE TUTORING WEB PAGE</h1>
+        <p>If you are struggling with studying and doing homeworks, this is for you!</p>
+        <p>Please Sign In or Register if you are new!</p>
+        <!-- Button group for Login and Registration -->
+        <div class="btn-group" role="group" aria-label="Login or Register">
+            <a href="/login" class="btn btn-rounded">Login</a>
+            <a href="/registration" class="btn btn-rounded">Register</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional, if needed) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
